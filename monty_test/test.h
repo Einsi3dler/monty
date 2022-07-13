@@ -3,6 +3,6 @@
 
 #include <stdio.h>
 
-int add(int a, int b);
+void add(int a, int b);
 
 #endif
