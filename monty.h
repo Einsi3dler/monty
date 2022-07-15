@@ -58,10 +58,6 @@ void find_funct(char *token_pass, char *value, int line_number);
 typedef void (*op_func)(char *, int);
 void call_fun(op_func, char *, int);
 
-/**
- * @head: Node/stack/Queue Pointer of first element
- */
-extern stack_t *head;
 
 /****************Stack Logic Functions********************/
 stack_t *add_node_stack(const int n);
