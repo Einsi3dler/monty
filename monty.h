@@ -35,18 +35,17 @@ typedef struct stack_s
 typedef struct instruction_s
 {
         char *opcode;
-        void (*f)(char *value, int line_number);
+        void (*f)(stack_t **stack, int line_number);
 } instruction_t;
 
 
 
 
-void find_funct(stack_t *, char *, int );
+void find_funct(stack_t **, char *, int );
 
 
 
 /****************Stack Logic Functions********************/
-stack_t *add_node_stack(const int n);
 void push(stack_t **stack, int number);
 
 #endif

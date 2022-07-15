@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void find_func(stack_t **head, char *token_pass, int ln)
+void find_funct(stack_t **head, char *token_pass, int ln)
 {
 	int i;
 

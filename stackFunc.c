@@ -16,7 +16,7 @@ void push(stack_t **stack, int number)
 
 	num = atoi(arg);
 //*stack have initial @prev & @next
-	stack_t *new_node = (stack_t)malloc(sizeof(stack_t));
+	stack_t *new_node = malloc(sizeof(stack_t));
 
 //if statement for non value pass to stack or underflow
 	if (new_node == 0)
@@ -35,5 +35,5 @@ void push(stack_t **stack, int number)
 	*stack = new_node;
 
 
-	printf("%d", new_node->n);
+	printf("%d\n", new_node->n);
 }
