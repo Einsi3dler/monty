@@ -7,7 +7,7 @@
  * @stack: A double linkedlist data
 */
 
-void push(stack_t **stack, unsigned int number)
+void push(stack_t **stack, int number)
 {
 //*stack have initial @prev & @next
 	stack_t *new_node = (stack_t)malloc(sizeof(stack_t));
