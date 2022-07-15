@@ -7,12 +7,14 @@
  * @stack: A double linkedlist data
 */
 
-int push(stack_t **stack, int number)
+void push(stack_t **stack, int number)
 {
 
-	char *arg = Value.argument
+	char *arg = strtok(NULL,"/t/n");
 	
-	int num = atoi(arg);
+	int num = 0;
+
+	num = atoi(arg);
 //*stack have initial @prev & @next
 	stack_t *new_node = (stack_t)malloc(sizeof(stack_t));
 
@@ -34,5 +36,4 @@ int push(stack_t **stack, int number)
 
 
 	printf("%d", new_node->n);
-	return (0);
 }

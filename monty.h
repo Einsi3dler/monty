@@ -38,26 +38,15 @@ typedef struct instruction_s
         void (*f)(char *value, int line_number);
 } instruction_t;
 
-/**
- *struct command_value - this holds the argument held by the oppocode
- *@argument: the argument
- *
- * Description: Holds complete arguments, accesbile from any where in the program
- */
-
-typedef struct command_value
-{
-	char *argument;
-}value
 
 
 
-void find_funct(char *, char *, int );
+void find_funct(stack_t *, char *, int );
 
 
 
 /****************Stack Logic Functions********************/
 stack_t *add_node_stack(const int n);
-int push(stack_t **stack, unsigned int number);
+void push(stack_t **stack, int number);
 
 #endif

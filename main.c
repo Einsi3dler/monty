@@ -13,8 +13,7 @@ int main(int argc, char **argv)
 	size_t characters;
 	
 	// Double linked list head
-	stack_t *stack_head;
-
+	stack_t * stack_head;
 
 	//Variables for file control
 	int line_num = 1;
@@ -32,9 +31,8 @@ int main(int argc, char **argv)
 	{
 		token = strtok(buffer, delim);
 		
-		value.argument = strtok(NULL, delim);
 		
-		find_funct(&stackhead, token, line_num);
+		find_funct(&stack_head, token, line_num);
 	}
 
 	return 0;
