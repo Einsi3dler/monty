@@ -7,24 +7,19 @@
  * @new_node: new stack element
  */
 
-stack_t add_node(unsigned int n)
+stack_t add_node_stack(void)
 {
-	head = NULL;
+	stack_t *temp = NULL;
+	stack_t *head = element->head;
 
-	stack_t *new_node, *temp;
-	new_node = (stack_t)malloc(sizeof(stack_t);
-
-	new_node->n = n;
-	new_node->next = NULL = new_node->prev;
-
-	if (head == NULL)
-		head = temp = new_node;
-
-	else
-	{
-		temp->next = new_node;
-		new_node->prev = temp;
-		temp = new_node;
-	}
+	temp = malloc(sizeof(stack_t));
+	if (temp == NULL)
+		return (NULL);
+	temp->next = (head == NULL) ? NULL : head;
+	temp->prev = NULL;
+	if (head)
+		head->prev = temp;
+	element->head = temp;
+	return (temp);
 }
 
