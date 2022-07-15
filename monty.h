@@ -1,6 +1,11 @@
 #ifndef MONTY_h
 #define MONTY_H
 
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -30,8 +35,28 @@ typedef struct stack_s
 typedef struct instruction_s
 {
         char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+        void (*f)(char *value, int line_number);
 } instruction_t;
+/**
+ *struct command_value - this holds the argument held by the oppocode
+ *@argument: the argument
+ *
+ * Description: Holds complete arguments, accesbile from any where in the program
+ */
+
+/*
+typedef struct command_value
+{
+	char *argument;
+}value
+
+*/
+
+void add(char *argument, int line_number);
+void minus(char *argumen, int line_number);
+void find_funct(char *token_pass, char *value, int line_number);
+typedef void (*op_func)(char *, int);
+void call_fun(op_func, char *, int);
 
 /**
  * @head: Node/stack/Queue Pointer of first element
