@@ -29,5 +29,16 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+/**
+ *struct command_value - this holds the argument held by the oppocode
+ *@argument: the argument
+ *
+ * Description: Holds complete arguments, accesbile from any where in the program
+ */
+typedef struct command_value
+{
+	char *argument;
+}value
+
 
 #endif
