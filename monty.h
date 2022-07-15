@@ -64,7 +64,7 @@ void call_fun(op_func, char *, int);
 extern stack_t *head;
 
 /****************Stack Logic Functions********************/
-void add_node(const int n);
+stack_t *add_node_stack(const int n);
 void push(stack_t **stack, unsigned int number);
 
 #endif
