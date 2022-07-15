@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <stdbool.h>
 
 
 /**
@@ -36,4 +37,23 @@ void push(stack_t **stack, int number)
 
 
 	printf("%d\n", new_node->n);
+}
+
+
+
+void pall(stack_t **stack, unsigned int line_number)
+{
+    bool true;
+    stack_t *holder;
+    (void)line_number;
+
+    holder = *stack;
+    if (holder == NULL)
+        return (NULL);
+
+    while (holder == true)
+    {
+        printf("%d\n", holder->n);
+        holder = holder->next;
+    }
 }
