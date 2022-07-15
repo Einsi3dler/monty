@@ -27,11 +27,11 @@ void push(stack_t **stack, int number)
 
 	new_node->n = num;
 
-	new_node->prev = 0;
+	new_node->prev = NULL;
 	new_node->next = new_node;
 
 //if statement for empty stack, then function will pass  new data
-	if (*stack != 0)
+	if (*stack != NULL)
 		(*stack)->prev = new_node;
 	*stack = new_node;
 
