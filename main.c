@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 	//variable to store tokens
 	char *token = NULL;
 	char *argument = NULL;
-	char *delim = " /t/n"
+	char *delim = " /t/n";
 
 	FILE *read_monty; 
 	
@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 	{
 		token = strtok(buffer, delim);
 		//arg.value = strtok(NULL, " /t/n");
-		argument = strtok(NULL, delim)
+		argument = strtok(NULL, delim);
 
 		find_funct(token, argument, line_num);
 	}
@@ -43,14 +43,14 @@ void find_funct(char *token_pass, char *value,  int line_number)
 
 	instruction_t func_list[] = {
 		{"hello", add},
-		{"world", minus}.
+		{"world", minus},
 		{NULL, NULL}
 	};
 	for (i = 0; func_list[i].opcode != NULL; i++)
 	{
 		if (strcmp(token_pass, func_list[i].opcode) == 0)
 		{
-			func_list[i].f(argument, line_number);
+			func_list[i].f(value, line_number);
 		}
 	}
 }
