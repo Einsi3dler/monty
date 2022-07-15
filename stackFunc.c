@@ -7,8 +7,12 @@
  * @stack: A double linkedlist data
 */
 
-void push(stack_t **stack, int number)
+int push(stack_t **stack, int number)
 {
+
+	char *arg = Value.argument
+	
+	int num = atoi(arg);
 //*stack have initial @prev & @next
 	stack_t *new_node = (stack_t)malloc(sizeof(stack_t));
 
@@ -18,7 +22,7 @@ void push(stack_t **stack, int number)
 		fprintf(stderr, "Error: malloc failed\n");
 	}
 
-	new_node->n = number;
+	new_node->n = num;
 
 	new_node->prev = 0;
 	new_node->next = new_node;
@@ -27,4 +31,8 @@ void push(stack_t **stack, int number)
 	if (*stack != 0)
 		(*stack)->prev = new_node;
 	*stack = new_node;
+
+
+	printf("%d", new_node->n);
+	return (0);
 }

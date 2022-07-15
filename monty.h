@@ -37,6 +37,7 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(char *value, int line_number);
 } instruction_t;
+
 /**
  *struct command_value - this holds the argument held by the oppocode
  *@argument: the argument
@@ -44,23 +45,19 @@ typedef struct instruction_s
  * Description: Holds complete arguments, accesbile from any where in the program
  */
 
-/*
 typedef struct command_value
 {
 	char *argument;
 }value
 
-*/
 
-void add(char *argument, int line_number);
-void minus(char *argumen, int line_number);
-void find_funct(char *token_pass, char *value, int line_number);
-typedef void (*op_func)(char *, int);
-void call_fun(op_func, char *, int);
+
+void find_funct(char *, char *, int );
+
 
 
 /****************Stack Logic Functions********************/
 stack_t *add_node_stack(const int n);
-void push(stack_t **stack, unsigned int number);
+int push(stack_t **stack, unsigned int number);
 
 #endif
