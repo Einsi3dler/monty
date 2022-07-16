@@ -6,7 +6,7 @@
  * @line_number: line_cnt
  */
 
-void pop(stack_t **stack, unsigned int line_number)
+void pop(stack_t **stack, int line_number)
 {
 	stack_t *holder = *stack;
 
