@@ -28,7 +28,7 @@ void push(stack_t **stack, int number)
 	new_node->n = num;
 
 	new_node->prev = NULL;
-	new_node->next = new_node;
+	new_node->next = *stack;
 
 //if statement for empty stack, then function will pass  new data
 	if (*stack != NULL)
@@ -41,17 +41,18 @@ void push(stack_t **stack, int number)
 
 
 
-void pall(stack_t **stack, unsigned int line_number)
+void pall(stack_t **stack, int line_number)
 {
-    bool true;
     stack_t *holder;
     (void)line_number;
 
     holder = *stack;
     if (holder == NULL)
-        return (NULL);
+    {
+	    printf("Stack empty");
+    }
 
-    while (holder == true)
+    while (holder != NULL)
     {
         printf("%d\n", holder->n);
         holder = holder->next;
