@@ -1,0 +1,20 @@
+#include "monty.h"
+
+
+/**
+ * pint - print an integers
+ * @stack: stack_t variable
+ * @line_number: int variable
+ */
+
+
+void pint(stack_t **stack, int line_number)
+{
+	if (stack == NULL)
+	{
+		printf("L<%d>: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	printf("%d\n", (*stack)->n);
+}
