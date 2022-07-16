@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "Test files creations"
+git commit -m "Compilation hotfix, segmentation error fixed"
 git push
