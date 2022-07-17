@@ -1,7 +1,7 @@
 #include "monty.h"
 void push(stack_t **stack, int number)
 {
-	cahr *arg = strtok(NULL, " /t/n");
+	char *arg = strtok(NULL, " /t/n");
 
 	int num = 0;
 
@@ -27,7 +27,7 @@ void push(stack_t **stack, int number)
 	else
 	{
 		new_node->next = *stack;
-		*stack->prev = new node;
+		(*stack)->prev = new_node;
 	}
 
 	*stack = new_node;

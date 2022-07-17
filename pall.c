@@ -8,9 +8,9 @@ void pall(stack_t **stack, int line_number)
 	holder = *stack;
 	if (holder == NULL)
 	{
-		printf("Stack empty")
+		printf("Stack empty");
 	}
-	while (ho;der != NULL)
+	while (holder != NULL)
 	{
 		printf("%d\n", holder->n);
 		holder = holder->next;
