@@ -33,9 +33,6 @@ void push(stack_t **stack, int number)
 	if (*stack != NULL)
 		(*stack)->prev = new_node;
 	*stack = new_node;
-
-
-	printf("%d\n", new_node->n);
 }
 
 
