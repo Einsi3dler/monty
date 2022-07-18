@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	Rfile = fopen(argv[1], "r");
 	if (!Rfile)
 	{
-		fprintf(stderr, "Error: can't open file %s\n", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	while (getline(&buffer, &buffsize, Rfile) != -1)
@@ -45,8 +45,12 @@ int main(int argc, char *argv[])
 			line_num++;
 			continue;
 		}
+		Arg.argument = strtok(NULL, " \t\n");
 		find_funct(&stack_head, token, line_num);
 		line_num++;
 	}
-	return (0);
+	free(buffer);
+	free_stack(&stack_head);
+	fclose(Rfile);
+	exit(EXIT_SUCCESS);
 }

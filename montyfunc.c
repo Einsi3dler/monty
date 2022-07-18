@@ -27,6 +27,7 @@ void find_funct(stack_t **head, char *token_pass, unsigned int ln)
 			return;
 		}
 	}
-	fprintf(stderr, "L%d: unknown intrusction %s\n", ln, token_pass);
+	fprintf(stderr, "L%d: unknown instruction %s\n", ln, token_pass);
 	exit(EXIT_FAILURE);
 }
+

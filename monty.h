@@ -44,11 +44,21 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct arg - argument for the current opcode
+ * @argument: the arguments of the string
+ *
+ * Description: global structure used to pass data around the functions easily
+ */
+typedef struct arg
+{
+	char *argument;
+} arg;
+arg Arg;
 
-
-
+/*******************Stack Operation Functions********/
 void find_funct(stack_t **, char *, unsigned int );
-
+void free_stack(stack_t **stack);
 
 
 /****************Stack Logic Functions********************/
@@ -56,7 +66,6 @@ void push(stack_t **, unsigned int);
 void pall(stack_t **, unsigned int);
 void pop(stack_t **, unsigned int);
 void pint(stack_t **, unsigned int);
-
 void nop(stack_t **, unsigned int);
 void division(stack_t **, unsigned int);
 void sub(stack_t **, unsigned int);
