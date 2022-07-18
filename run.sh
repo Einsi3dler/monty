@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "Code check preparations, bug cleanup"
+git commit -m "Pint implementation addition"
 git push

@@ -16,6 +16,7 @@ void find_funct(stack_t **head, char *token_pass, unsigned int ln)
 	instruction_t function_list[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pall},
 		{NULL, NULL}
 	};
 
