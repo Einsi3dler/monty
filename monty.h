@@ -57,5 +57,9 @@ void pall(stack_t **, unsigned int);
 void pop(stack_t **, unsigned int);
 void pint(stack_t **, unsigned int);
 
+void nop(stack_t **stack, int line_number);
+void division(stack_t **stack, int line_number);
+void sub(stack_t **stack, int line_number);
+
 
 #endif
