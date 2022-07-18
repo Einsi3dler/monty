@@ -50,6 +50,9 @@ void push(stack_t **, int);
 void pall(stack_t **, int);
 void pop(stack_t **, int);
 void pint(stack_t **, int);
+void nop(stack_t **stack, int line_number);
+void division(stack_t **stack, int line_number);
+void sub(stack_t **stack, int line_number);
 
 
 #endif
