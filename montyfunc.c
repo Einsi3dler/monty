@@ -13,20 +13,19 @@ void find_funct(stack_t **head, char *token_pass, unsigned int ln)
 {
 	int i;
 
-	instruction_t function_list[] =
-	{
+	instruction_t function_list[] = {
 		{"push", push},
 		{"pall", pall},
 		{NULL, NULL}
 	};
 
-	for(i = 0; function_list[i].opcode != NULL; i++)
+	for (i = 0; function_list[i].opcode != NULL; i++)
 	{
-		if (strcmp(function_list[i].opcode,token_pass)==0)
+		if (strcmp(function_list[i].opcode, token_pass) == 0)
 		{
-			function_list[i].f(head,ln);
+			function_list[i].f(head, ln);
 		}
 	}
-	fprintf(stderr, "L%d: unknown intrusction %s\n", ln , token_pass);
+	fprintf(stderr, "L%d: unknown intrusction %s\n", ln, token_pass);
 	exit(EXIT_FAILURE);
 }

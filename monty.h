@@ -1,9 +1,9 @@
 #ifndef MONTY_h
 #define MONTY_H
 
-
 #include <stdio.h>
 #include <stdlib.h>
+#define _GNU_SOURCE
 #include <string.h>
 #include <stddef.h>
 #include <unistd.h>
@@ -57,9 +57,9 @@ void pall(stack_t **, unsigned int);
 void pop(stack_t **, unsigned int);
 void pint(stack_t **, unsigned int);
 
-void nop(stack_t **stack, int line_number);
-void division(stack_t **stack, int line_number);
-void sub(stack_t **stack, int line_number);
+void nop(stack_t **, unsigned int);
+void division(stack_t **, unsigned int);
+void sub(stack_t **, unsigned int);
 
 
 #endif

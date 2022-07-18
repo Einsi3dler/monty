@@ -6,8 +6,8 @@
  * @line_number: unsigned int variable
 */
 
-void nop(stack_t **stack, int line_number)
+void nop(stack_t **stack, unsigned int line_number)
 {
-	stack = NULL;
+	*stack = *stack;
 	line_number = line_number;
 }

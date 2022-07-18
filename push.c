@@ -1,7 +1,15 @@
 #include "monty.h"
+/**
+ *push - pushes an element onto a stack
+ *@stack: the stack to push the element to
+ *@number: the line number of the particulare opcode instruction
+ *              in the monty byte code file
+ *
+ *Return: void
+ */
 void push(stack_t **stack, unsigned int number)
 {
-	int num =0, i;
+	int num;
 	char *arg = strtok(NULL, " /t/n");
 	stack_t *new_node = malloc(sizeof(stack_t));
 
@@ -10,26 +18,13 @@ void push(stack_t **stack, unsigned int number)
 		fprintf(stderr, "L%d: usage: push integer\n", number);
 		exit(EXIT_FAILURE);
 	}
-
-	for (i = 0; arg[i] != '\0'; i++)
-	{
-		if ((isdigit(arg[i])) == 0 && arg[i] != '-')
-		{
-			fprintf(stderr, "L%d: usage: push integer\n", number);
-			exit(EXIT_FAILURE);
-		}
-	}
-
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-
 	num = atoi(arg);
-
 	new_node->n = num;
-
 	if (*stack == NULL)
 	{
 		new_node->next = NULL;
@@ -41,7 +36,5 @@ void push(stack_t **stack, unsigned int number)
 		new_node->next = *stack;
 		(*stack)->prev = new_node;
 	}
-
 	*stack = new_node;
-
 }

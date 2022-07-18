@@ -6,7 +6,7 @@
  * @line_number: unsigned int variable
  */
 
-void division(stack_t **stack, int line_number)
+void division(stack_t **stack, unsigned int line_number)
 {
 	int divide;
 
