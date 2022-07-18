@@ -17,6 +17,10 @@ void find_funct(stack_t **head, char *token_pass, unsigned int ln)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pall},
+		{"pop", pop},
+		{"swap", swap},
+		{"add", add},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 
