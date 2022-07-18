@@ -24,6 +24,7 @@ void find_funct(stack_t **head, char *token_pass, unsigned int ln)
 		if (strcmp(function_list[i].opcode, token_pass) == 0)
 		{
 			function_list[i].f(head, ln);
+			return;
 		}
 	}
 	fprintf(stderr, "L%d: unknown intrusction %s\n", ln, token_pass);
