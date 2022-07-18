@@ -1,6 +1,15 @@
 #include "monty.h"
 
-void find_funct(stack_t **head, char *token_pass, int ln)
+/**
+ * find_funct - carries certain arguments to help find the right function
+ *@head: the head address of the stack
+ *@token_pass: string containing the token argunment
+ *@ln: contains the line number
+ *
+ *Return: void
+ */
+
+void find_funct(stack_t **head, char *token_pass, unsigned int ln)
 {
 	int i;
 
@@ -18,4 +27,6 @@ void find_funct(stack_t **head, char *token_pass, int ln)
 			function_list[i].f(head,ln);
 		}
 	}
+	fprintf(stderr, "L%d: unknown intrusction %s\n", ln , token_pass);
+	exit(EXIT_FAILURE);
 }
