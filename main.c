@@ -48,4 +48,5 @@ int main(int argc, char *argv[])
 		find_funct(&stack_head, token, line_num);
 		line_num++;
 	}
+	return (0);
 }
