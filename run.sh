@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "Function file breakdown"
+git commit -m "Fixed file getline fault, interpreter complete"
 git push
