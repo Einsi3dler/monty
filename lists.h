@@ -4,14 +4,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-
-/***
- *Normal function prototypes
- */
-
-char *commmand_Verif(val);
-
-
 /**
  *Struct Definitions
  */
@@ -45,4 +37,11 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+
+
+
+
+void push_func(stack_t **stack, unsigned int line_number);
+void commmand_Verif(char *val);
 #endif /*LISTS_H*/
