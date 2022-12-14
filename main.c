@@ -10,7 +10,6 @@ void main ()
 	ptr = fopen("test", "r");
 	while (fgets(val, 20, ptr) != NULL)
 	{
-		commmand_Verif(val);
 		printf("I am at main %s\n", val);
 	}
 	fclose(ptr);
