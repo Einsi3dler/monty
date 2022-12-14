@@ -1,5 +1,5 @@
 #include "lists.h"
-char *toke_arr[2]={"man","woman"};
+char *toke_arr[2];
 void commmand_Verif(char *val)
 {
 	instruction_t op_built[] = 
@@ -21,7 +21,7 @@ void commmand_Verif(char *val)
 		ind++;
 		token = strtok(NULL, " ");
 	}
-	if (!strcmp(toke_arr[0],op_built[0].opcode))
+	if (strcmp(toke_arr[0],op_built[0].opcode) == 0)
 	{
 		op_built[0].f(NULL,1);
 		printf("%s iii %s\n",toke_arr[0], toke_arr[1]);
