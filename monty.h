@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 extern char *toke_arr[2];
+char *toke_arr[2];
 /**
  *Struct Definitions
  */
@@ -42,5 +43,4 @@ typedef struct instruction_s
 
 void push_func(stack_t **stack, unsigned int line_number);
 int command_verifier(unsigned int line_num, char *val, stack_t **head);
-void stderr_unknown(char *token, unsigned int line_number)
 #endif /*LISTS_H*/

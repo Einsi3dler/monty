@@ -1,5 +1,4 @@
 #include "monty.h"
-char *toke_arr[2];
 /**
  * command_verifier - this verrifies the passed command
  * @line_num: this is the line number for the command
@@ -40,7 +39,8 @@ int command_verifier(unsigned int line_num, char *val, stack_t **head)
 	}
 	if (check == 0)
 	{
-		stderr_unknown(toke_arr[0],line_num);
+		fprintf(stderr, "L%u: unknown instruction %s\n", line_num, toke_arr[0]);
+		exit(EXIT_FAILURE);
 	}
 	return (1);
 }
