@@ -1,12 +1,12 @@
-#include "lists.h"
+#include "monty.h"
 /****
  * I am still testing out various code pieces hence it's current state,
  * leave comments if you alter
  */
-void main () 
+int main () 
 {
 	FILE *ptr;
-	char val[100];
+	char val[20];
 	ptr = fopen("test", "r");
 	while (fgets(val, 20, ptr) != NULL)
 	{
@@ -14,4 +14,5 @@ void main ()
 		printf("I am at main %s\n", val);
 	}
 	fclose(ptr);
+	return (1);
 }

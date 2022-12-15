@@ -1,4 +1,4 @@
-#include "lists.h"
+#include "monty.h"
 char *toke_arr[2];
 void commmand_Verif(char *val)
 {
@@ -21,9 +21,15 @@ void commmand_Verif(char *val)
 		ind++;
 		token = strtok(NULL, " ");
 	}
-	if (strcmp(toke_arr[0],op_built[0].opcode) == 0)
+	if (ind <  2)
+	{
+		printf("usage failed\n");
+
+	}
+	/*if (strcmp(toke_arr[0],op_built[0].opcode) == 0)
 	{
 		op_built[0].f(NULL,1);
 		printf("%s iii %s\n",toke_arr[0], toke_arr[1]);
 	}
+	*/
 }
