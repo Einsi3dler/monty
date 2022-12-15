@@ -6,6 +6,7 @@
  */
 void push_func(stack_t **stack, unsigned int line_number)
 {
-	printf("I was here at push\n");
+	*stack = NULL;
+	printf("I was here at push %d\n", line_number);
 	printf("I am singing from push%s\n", toke_arr[1]);
 }
