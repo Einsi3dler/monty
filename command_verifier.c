@@ -1,14 +1,21 @@
 #include "monty.h"
-char *toke_arr[2];
-void commmand_Verif(char *val)
+/**
+ * command_verifier - this verrifies the passed command
+ * @line_num: this is the line number for the command
+ * @val: this is the string token
+ * @head: pointer to the pointer of the stack head
+ * Return: void
+ */
+void command_verifier(unsigned int line_num, char *val, stack_t **head)
 {
-	instruction_t op_built[] = 
-	{
+	instruction_t op_com[] = {
 	{"push", push_func}
 	};
+	int i, check = 0;
 	char *token = strtok(val, " ");
 	int ind = 0;
-	while(token != NULL)
+
+	while (token != NULL)
 	{
 		if (ind == 0)
 		{
@@ -21,15 +28,18 @@ void commmand_Verif(char *val)
 		ind++;
 		token = strtok(NULL, " ");
 	}
-	if (ind <  2)
+	for (i = 0; op_com[i].opcode; i++)
 	{
-		printf("usage failed\n");
-
+		if (strcmp(toke_arr[i], op_built[i].opcode) == 0)
+		{
+			check = 1;
+			op_built[0].f(head, line_num);
+			break;
+		}
 	}
-	/*if (strcmp(toke_arr[0],op_built[0].opcode) == 0)
+	if (check == 1)
 	{
-		op_built[0].f(NULL,1);
-		printf("%s iii %s\n",toke_arr[0], toke_arr[1]);
+		fprintf(stderr, "L%d: unknown instruction %s", line_num, toke_arr[1]);
+		exit(EXIT_FAILURE);
 	}
-	*/
 }
