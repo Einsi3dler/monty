@@ -6,7 +6,7 @@
  * @head: pointer to the pointer of the stack head
  * Return: void
  */
-int command_verifier(unsigned int line_num, char *val, stack_t **head)
+void command_verifier(unsigned int line_num, char *val, stack_t **head)
 {
 	instruction_t op_com[] = {
 	{"push", push_func}
@@ -34,7 +34,6 @@ int command_verifier(unsigned int line_num, char *val, stack_t **head)
 		{
 			check = 1;
 			op_com[0].f(head, line_num);
-			return (1);
 		}
 	}
 	if (check == 0)
@@ -42,5 +41,4 @@ int command_verifier(unsigned int line_num, char *val, stack_t **head)
 		fprintf(stderr, "L%u: unknown instruction %s\n", line_num, toke_arr[0]);
 		exit(EXIT_FAILURE);
 	}
-	return (1);
 }

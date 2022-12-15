@@ -42,5 +42,5 @@ typedef struct instruction_s
 
 
 void push_func(stack_t **stack, unsigned int line_number);
-int command_verifier(unsigned int line_num, char *val, stack_t **head);
+void command_verifier(unsigned int line_num, char *val, stack_t **head);
 #endif /*LISTS_H*/
