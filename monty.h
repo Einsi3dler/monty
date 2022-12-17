@@ -6,8 +6,6 @@
 #include <string.h>
 #include <ctype.h>
 #include <unistd.h>
-extern char *toke_arr[2];
-char *toke_arr[2];
 /**
  *Struct Definitions
  */
