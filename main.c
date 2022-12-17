@@ -7,9 +7,12 @@ int main(int argc, char *argv[])
 {
 	stack_t *head;
 	FILE *ptr;
-	char val[20];
+	char *buffer;
+	char *line;
 	unsigned int line_num;
+	int read;
 
+	size_t i = 0;
 	head = NULL;
 	ptr = fopen("test", "r");
 	line_num = 1;
@@ -24,13 +27,19 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (fgets(val, 20, ptr) != NULL)
+	while((read = getline(&buffer, &i, ptr)) != -1)
 	{
-
-		command_verifier(line_num, val, &head);
-		printf("%s",val);
+		line = parse_line(buffer);
+		if (line == NULL || line[0] == '#')
+		{
+			line_num++;
+			continue;
+		}
+		command_verifier(line_num, line, &head);
 		line_num++;
 	}
+	free(buffer);
 	fclose(ptr);
+	free_dlistint(head);
 	return (1);
 }

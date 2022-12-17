@@ -1,9 +1,11 @@
 #ifndef LISTS_H
 #define LISTS_H
-
+#define  _GNU_SOURCE
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
+#include <unistd.h>
 extern char *toke_arr[2];
 char *toke_arr[2];
 /**
@@ -39,8 +41,20 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
-
-void push_func(stack_t **stack, unsigned int line_number);
-void command_verifier(unsigned int line_num, char *val, stack_t **head);
+/*
+ *monty functions
+ */
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
+void command_verifier(unsigned int line_num, char *line, stack_t **stack);
+/*
+ *utillity functions
+ */
+char *parse_line(char *line);
+stack_t *add_dnodeint(stack_t **head, const int n);
+int isnumber(char *str);
+void error_exit(stack_t **stack);
+void free_dlistint(stack_t *head);
+typedef void (*instruct_func)(stack_t **stack, unsigned int line_number);
+instruct_func get_func(char *str);
 #endif /*LISTS_H*/

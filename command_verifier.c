@@ -6,39 +6,38 @@
  * @head: pointer to the pointer of the stack head
  * Return: void
  */
-void command_verifier(unsigned int line_num, char *val, stack_t **head)
+void command_verifier(unsigned int line_num, char *line, stack_t **stack)
 {
-	instruction_t op_com[] = {
-	{"push", push_func}
-	};
-	int i, check = 0;
-	char *token = strtok(val, " ");
-	int ind = 0;
+	instruct_func s;
 
-	while (token != NULL)
+	s = get_func(line);
+	if (s == NULL)
 	{
-		if (ind == 0)
-		{
-			toke_arr[ind] = token;
-		}
-		else if (ind == 1)
-		{
-			toke_arr[ind] = token;
-		}
-		ind++;
-		token = strtok(NULL, " ");
-	}
-	for (i = 0; op_com[i].opcode; i++)
-	{
-		if (strcmp(toke_arr[0], op_com[i].opcode) == 0)
-		{
-			check = 1;
-			op_com[0].f(head, line_num);
-		}
-	}
-	if (check == 0)
-	{
-		fprintf(stderr, "L%u: unknown instruction %s\n", line_num, toke_arr[0]);
+		printf("L%u: unknown instruction %s", line_num, toke_arr[0]);
 		exit(EXIT_FAILURE);
 	}
+	s(stack, line_num);
+}
+/**
+ * get_func - checks opcode and returns a function
+ * @str: the opcode
+ *
+ * Return: returns a function, or NULL on failure
+ */
+instruct_func get_func(char *str)
+{
+	int i;
+	instruction_t instruct[] = {
+		{"push", push},
+		{"pall", pall},
+		{NULL, NULL},
+	};
+
+	i = 0;
+	while (instruct[i].f != NULL && strcmp(instruct[i].opcode, str) != 0)
+	{
+		i++;
+	}
+
+	return (instruct[i].f);
 }
