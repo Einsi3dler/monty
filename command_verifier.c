@@ -13,7 +13,7 @@ void command_verifier(unsigned int line_num, char *line, stack_t **stack)
 	s = get_func(line);
 	if (s == NULL)
 	{
-		printf("L%u: unknown instruction %s", line_num, line);
+		printf("L%u: unknown instruction %s\n", line_num, line);
 		exit(EXIT_FAILURE);
 	}
 	s(stack, line_num);
