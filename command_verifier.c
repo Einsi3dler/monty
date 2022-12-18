@@ -33,6 +33,8 @@ instruct_func get_func(char *str)
 		{"pint", pint},
 		{"swap", swap},
 		{"pop", pop},
+		{"nop", nop},
+		{"add", add},
 		{NULL, NULL},
 	};
 

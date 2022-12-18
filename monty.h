@@ -47,10 +47,13 @@ void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
 void command_verifier(unsigned int line_num, char *line, stack_t **stack);
 /*
  *utillity functions
  */
+int delete_dnodeint_at_index(stack_t **head, unsigned int index);
 char *parse_line(char *line);
 stack_t *add_dnodeint(stack_t **head, const int n);
 int isnumber(char *str);
