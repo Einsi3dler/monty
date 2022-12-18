@@ -30,6 +30,9 @@ instruct_func get_func(char *str)
 	instruction_t instruct[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
+		{"swap", swap},
+		{"pop", pop},
 		{NULL, NULL},
 	};
 
