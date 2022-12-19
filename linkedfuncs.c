@@ -81,7 +81,7 @@ void free_dlistint(stack_t *head)
 	while (head != NULL)
 	{
 		temp = head;
-		head = head->nextl
+		head = head->next;
 		free(temp);
 	}
 }
