@@ -38,8 +38,8 @@ int main(int argc, char *argv[])
 		command_verifier(line_num, line, &head);
 		line_num++;
 	}
+	free_dlistint(head);
 	free(buffer);
 	fclose(ptr);
-	free_dlistint(head);
 	return (0);
 }
