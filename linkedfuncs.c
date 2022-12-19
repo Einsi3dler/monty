@@ -76,13 +76,13 @@ void error_exit(stack_t **stack)
  */
 void free_dlistint(stack_t *head)
 {
-	stack_t *tmp;
+	stack_t *temp;
 
 	while (head != NULL)
 	{
-		tmp = head->next;
-		free(head);
-		head = tmp;
+		temp = head;
+		head = head->nextl
+		free(temp);
 	}
 }
 /**
