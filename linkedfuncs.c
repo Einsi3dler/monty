@@ -78,6 +78,11 @@ void free_dlistint(stack_t *head)
 {
 	stack_t *temp;
 
+	if(head == NULL)
+	{
+		return;
+	}
+
 	while (head != NULL)
 	{
 		temp = head;
