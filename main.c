@@ -41,5 +41,5 @@ int main(int argc, char *argv[])
 	free(buffer);
 	fclose(ptr);
 	free_dlistint(head);
-	return (2);
+	return (0);
 }
